@@ -9,7 +9,7 @@ interface StudySetProps {
   };
 }
 
-export default function StudySet({ params }: StudySetProps) {
+export default async function StudySet({ params }: StudySetProps) {
   const { studySetId } = await params;
   const studySet = genkiData.filter((set) => set.slug === studySetId)[0];
 
