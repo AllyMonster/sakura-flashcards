@@ -12,8 +12,8 @@ interface FlashcardPageProps {
   };
 }
 
-export default function FlashcardPage({ params }: FlashcardPageProps) {
-  const { studySetId, lessonId, flashcardId } = params;
+export default async function FlashcardPage({ params }: FlashcardPageProps) {
+  const { studySetId, lessonId, flashcardId } = await params;
   const studySet = genkiData.filter((set) => set.slug === studySetId)[0];
   const lesson = studySet.data.filter((lesson) => lesson.slug === lessonId)[0];
   const unit = lesson.units.filter((unit) => unit.slug === flashcardId)[0];
